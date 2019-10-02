@@ -1,0 +1,25 @@
+{
+    "id": 1,
+    "usuarios": [
+        {
+            "name": "Lazaro Gabriel",
+            "email": "lazarogabriel2000@gmail.com",
+            "username": "Lazzaro",
+            "edad": "19",
+            "gen": "v",
+            "password": "4297f44b13955235245b2497399d7a93",
+            "id": 0,
+            "ext_foto": "jpg"
+        },
+        {
+            "name": "Emanuel Marcos",
+            "email": "imanuele@falopa123.com",
+            "username": "Macron",
+            "edad": "22",
+            "gen": "o",
+            "password": "827ccb0eea8a706c4c34a16891f84e7b",
+            "id": 1,
+            "ext_foto": "jpg"
+        }
+    ]
+}

@@ -1,0 +1,703 @@
+/* --------------------------------
+
+Primary style
+
+-------------------------------- */
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: "Montserrat", sans-serif;
+  background-color: #1d2c38;
+
+}
+
+  .welcome_card{
+
+  }
+  /* SCROLL BAR */
+
+  ::-webkit-scrollbar {
+      width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+
+      -webkit-box-shadow: inset 0 0 0px orange;
+      border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb{
+      border-radius: 0px;
+      -webkit-box-shadow: inset 0 0 20px  #efbf3a;
+  }
+  ::-webkit-scrollbar-corner{
+    background-color: blue;
+  }
+  /* SCROLL BAR */
+
+
+  /* TAJETAS DE REDIRECCION A LOS JUEGOS */
+  html body main #cd-gallery-items a{
+    background: rgba(250, 255, 0, 0.48);
+    color:white;
+  }
+  main #cd-gallery-items a:hover{
+    background-color: red;
+    color:black;
+  }
+  li .anchor_img_game{
+
+  }
+  main .anchor_img_game{
+
+      text-decoration: none;
+    }
+    .anchor_img_game p{
+      padding: 10%;
+      font-size: 2em;
+    }
+
+
+    /* background-image: url("imagenes/ahorcado_fondo1.png"); */
+  }
+
+
+
+  /* TAJETAS DE REDIRECCION A LOS JUEGOS */
+
+
+/* #cd-main-nav a {
+
+  color:#efbf3a;
+  text-decoration: none;
+}
+#cd-main-nav ul li a:hover{
+  transition: 0.8s;
+  color:white;
+  border-radius:2px;
+  border:1px solid yellow;
+  text-decoration: none;
+} */
+
+
+img {
+
+}
+.argames{
+  max-width: 100%;
+  font-weight: 1000;
+  font-size: 4em;
+  color:white;
+  text-shadow:5px 5px #32536e;
+}
+/* .argames_downtext{
+pad
+} */
+
+/* --------------------------------
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+.cd-container {
+  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+  width: 84%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.cd-container::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}
+.container-games {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 30px;
+  height: 250px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.01;
+  transition: .6s ease;
+  background-color:  #efbf3a;
+}
+
+   .overlay:hover {
+    opacity: 0.5;
+  }
+
+
+    .text_game{
+      padding: 8%;
+      font-size: 3em;
+      color:rgb(0, 0, 0);
+
+    }
+    .text-2{
+      font-size: 0.4em;
+    }
+
+    .text-1{
+      padding-left: 0px;
+      font-size: .8em;
+    }
+
+
+/* --------------------------------
+
+Main components
+
+-------------------------------- */
+header {
+  position: relative;
+  height: 150px;
+  text-align: center;
+  margin-bottom: 3em;
+  padding-top: 3em;
+}
+header #cd-logo {
+  margin-bottom: 3em;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .text_game{
+    padding: 8%;
+    font-size: 3em;
+    color:black;
+
+  }
+  .text-2{
+    font-size: 0.5em;
+  }
+
+  .text-1{
+    padding-left: 0px;
+    font-size: 1.4em;
+  }
+  header {
+    margin-bottom: 4em;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .argames{
+  font-size: 4.5em;                               /* SOLUCIONAR EL HEAEDER, EL LOGO ESTA MUY GRANDE*/
+  }
+  .text_game{
+    padding: 8%;
+    font-size: 3em;
+    color:red;
+
+  }
+  .text-2{
+    font-size: 0.5em;
+  }
+
+  .text-1{
+    font-size: .8em;
+  }
+  header {
+    height: 150px;
+    padding-top: 11em;
+  }
+  header #cd-logo {
+    position: absolute;
+    top: 40px;
+    left: 5%;
+  }
+
+}
+
+#cd-nav ul {
+  /* mobile first */
+  position: fixed;
+  width: 90%;
+  max-width: 400px;
+  right: 5%;
+  bottom: 20px;
+  border-radius: 0.25em;
+  box-shadow:  7px 7px #3c5567;
+  background: white;
+  visibility: hidden;
+  /* remove overflow:hidden if you want to create a drop-down menu - but then remember to fix/eliminate the list items animation */
+  overflow: hidden;
+  z-index: 1;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  -webkit-transition: -webkit-transform 0.3s, visibility 0s 0.3s;
+  -moz-transition: -moz-transform 0.3s, visibility 0s 0.3s;
+  transition: transform 0.3s, visibility 0s 0.3s;
+}
+#cd-nav ul li {
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+#cd-nav ul.is-visible {
+  visibility: visible;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.3s, visibility 0s 0s;
+  -moz-transition: -moz-transform 0.3s, visibility 0s 0s;
+  transition: transform 0.3s, visibility 0s 0s;
+}
+#cd-nav ul.is-visible li:nth-child(1) {
+  /* list items animation */
+  -webkit-animation: cd-slide-in 0.2s;
+  -moz-animation: cd-slide-in 0.2s;
+  animation: cd-slide-in 0.2s;
+}
+#cd-nav ul.is-visible li:nth-child(2) {
+  -webkit-animation: cd-slide-in 0.3s;
+  -moz-animation: cd-slide-in 0.3s;
+  animation: cd-slide-in 0.3s;
+}
+#cd-nav ul.is-visible li:nth-child(3) {
+  -webkit-animation: cd-slide-in 0.4s;
+  -moz-animation: cd-slide-in 0.4s;
+  animation: cd-slide-in 0.4s;
+}
+#cd-nav ul.is-visible li:nth-child(4) {
+  -webkit-animation: cd-slide-in 0.5s;
+  -moz-animation: cd-slide-in 0.5s;
+  animation: cd-slide-in 0.5s;
+}
+#cd-nav ul.is-visible li:nth-child(5) {
+  -webkit-animation: cd-slide-in 0.6s;
+  -moz-animation: cd-slide-in 0.6s;
+  animation: cd-slide-in 0.6s;
+}
+ #cd-nav li a {
+  background-color: #1d2c38;        /*   askdmasldnsadasdlaksmdlamdkasmdlmasdlmasldmaskldmlaskmdlkasmldkmasdk */
+  color: #efbf3a;
+  display: block;
+  padding: 1.6em;
+  border-bottom: 5.5px solid transparent;
+}
+#cd-nav li a:hover {
+  text-decoration: none;
+  color: white;
+  padding: 1.6em;
+  border-bottom: 5.5px solid white;
+}
+
+@media only screen and (min-width: 1170px) {
+  .text_game{
+    padding: 8%;
+    color:rgb(0, 0, 0);
+
+  }
+  .text-2{
+    font-size: 0.5em;
+  }
+
+  .text-1{
+    padding-left: 0px;
+    font-size: 1.7em;
+  }
+  #cd-nav ul {
+    /* the navigation moves to the top */
+    position: absolute;
+    width: auto;
+    max-width: none;
+    bottom: auto;
+    top: 55px;
+    background: transparent;
+    visibility: visible;
+    box-shadow: none;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0s;
+    -moz-transition: all 0s;
+    transition: all 0s;
+  }
+  #cd-nav li {
+    display: inline-block;
+  }
+  #cd-nav li a {
+    opacity: 1;
+    background-color: #1d2c38;
+    padding-top: 3em;
+    margin-left: 1.6em;
+  }
+  #cd-nav li a:hover {
+    background-color: #1d2c38;
+    transition: 0.4s;
+    text-decoration: none;
+
+  }
+  #cd-nav.is-fixed ul {
+    /* when the user scrolls down, the navigation moves to the bottom right in Fixed position - as on touch devices */
+    position: fixed;
+    width: 90%;
+    max-width: 400px;
+    bottom: 20px;
+    top: auto;
+    background: white;
+    visibility: hidden;
+    box-shadow:  10px 10px #2c465b;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+  #cd-nav.is-fixed ul li {
+    display: block;
+  }
+  #cd-nav.is-fixed ul li a {
+    padding: 1.6em;
+    background-color: #1d2c38;
+    margin-left: 0;
+  }
+  #cd-nav ul.has-transitions {
+    /* this class is used to bring back transitions when the navigation moves at the bottom right */
+    -webkit-transition: -webkit-transform 0.3s, visibility 0s 0.3s;
+    -moz-transition: -moz-transform 0.3s, visibility 0s 0.3s;
+    transition: transform 0.3s, visibility 0s 0.3s;
+  }
+  #cd-nav ul.is-visible {
+    /* this class is used to bring back the navigation animation - as on touch devices */
+    visibility: visible;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: -webkit-transform 0.3s, visibility 0s 0s;
+    -moz-transition: -moz-transform 0.3s, visibility 0s 0s;
+    transition: transform 0.3s, visibility 0s 0s;
+  }
+  #cd-nav ul.is-hidden {
+    /* this class is used to animate the scale down the navigation when the user scrolls down with the navigation still open */
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+  }
+}
+
+.cd-nav-trigger {
+  position: fixed;
+  bottom: 20px;
+  right: 5%;
+  width: 44px;
+  height: 44px;
+  background: #1d2c38;
+  border-radius: 10px;
+  box-shadow:  6px 6px  #334e63;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  z-index: 2;
+}
+.cd-nav-trigger span {
+  /* the span element is used to create the menu icon */
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #efbf3a;
+  top: 50%;
+  margin-top: -1px;
+  left: 50%;
+  margin-left: -10px;
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  transition: background 0.3s;
+}
+.cd-nav-trigger span::before, .cd-nav-trigger span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  background: inherit;
+  width: 100%;
+  height: 100%;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.3s, background 0s;
+  -moz-transition: -moz-transform 0.3s, background 0s;
+  transition: transform 0.3s, background 0s;
+}
+.cd-nav-trigger span::before {
+  top: -6px;
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
+  transform: rotate(0);
+}
+.cd-nav-trigger span::after {
+  bottom: -6px;
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
+  transform: rotate(0);
+}
+.cd-nav-trigger.menu-is-open {
+box-shadow:  6px 6px #334e63;
+}
+.cd-nav-trigger.menu-is-open span {
+  background-color: #efbf3a;
+}
+.cd-nav-trigger.menu-is-open span::before, .cd-nav-trigger.menu-is-open span::after {
+background-color: #efbf3a;
+}
+.cd-nav-trigger.menu-is-open span::before {
+  top: 0;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.cd-nav-trigger.menu-is-open span::after {
+  bottom: 0;
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+@media only screen and (min-width: 1170px) { /* PANTALLA CELULAR */
+
+  .image {
+    width: 100px;
+    height: 400px;
+  }
+  .cd-nav-trigger {
+    /* the the menu triger is hidden by default on desktop devices */
+    visibility: hidden;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: -webkit-transform 0.3s, visibility 0s 0.3s;
+    -moz-transition: -moz-transform 0.3s, visibility 0s 0.3s;
+    transition: transform 0.3s, visibility 0s 0.3s;
+  }
+  .is-fixed .cd-nav-trigger {
+
+    visibility: visible;
+    -webkit-transition: all 0s;
+    -moz-transition: all 0s;
+    transition: all 0s;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation: cd-bounce-in 0.3s linear;
+    -moz-animation: cd-bounce-in 0.3s linear;
+    animation: cd-bounce-in 0.3s linear;
+  }
+}
+
+#cd-gallery-items li {
+  border: 2px solid #efbf3a;
+  height: 250px;
+  margin-bottom: 1.5em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 0.25em;
+}
+#cd-gallery-items li img {
+  width: 100%;
+  display: block;
+  border-radius: 0.25em;
+}
+@media only screen and (min-width: 768px) { /*PANTALLA MEDIANA */
+
+  .image {
+    display: block;
+    width: 10px;
+    height: 300px;
+  }
+  .anchor_img_game p{
+    font-size: 2.5em;
+  }
+  #cd-gallery-items li {
+    height: 300px;
+    width: 100%;
+    float: left;
+    margin-bottom: 2em;
+    margin-right: 4%;
+  }
+  #cd-gallery-items li:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+/* @media only screen and(min-width: 310px){ ARREGLAR EL ESPACION ENTRE EL HEADER Y CUERPO
+  .cd-container{                                                    ARREGLAR EL ESPACION ENTRE EL HEADER Y CUERPO
+    margin-top: 1100px;           ARREGLAR EL ESPACION ENTRE EL HEADER Y CUERPO  ARREGLAR EL ESPACION ENTRE EL HEADER Y CUERPO
+  }
+} */
+@media only screen and (min-width: 1170px) { /*PANTALLA MAS GRANDE*/
+  .text {
+
+  }
+  .text2{
+
+  }
+
+  .image {
+    display: block;
+    width: 10px;
+    height: 446px;
+  }
+  .anchor_img_game p{
+    font-size: 3em;
+  }
+  #cd-gallery-items li {
+    width: 100%;
+    height: 450px;
+    float: left;
+    margin-bottom: 2.5em;
+    margin-right: 3.5%;
+  }
+  #cd-gallery-items li:nth-child(2n) {
+    margin-right: 3.5%;
+  }
+  #cd-gallery-items li:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+@-webkit-keyframes cd-slide-in {
+  0% {
+    -webkit-transform: translateX(100px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@-moz-keyframes cd-slide-in {
+  0% {
+    -moz-transform: translateX(100px);
+  }
+
+  100% {
+    -moz-transform: translateY(0);
+  }
+}
+@keyframes cd-slide-in {
+  0% {
+    -webkit-transform: translateX(100px);
+    -moz-transform: translateX(100px);
+    -ms-transform: translateX(100px);
+    -o-transform: translateX(100px);
+    transform: translateX(100px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes cd-bounce-in {
+  0% {
+    -webkit-transform: scale(0);
+  }
+
+  60% {
+    -webkit-transform: scale(1.2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+@-moz-keyframes cd-bounce-in {
+  0% {
+    -moz-transform: scale(0);
+  }
+
+  60% {
+    -moz-transform: scale(1.2);
+  }
+
+  100% {
+    -moz-transform: scale(1);
+  }
+}
+@keyframes cd-bounce-in {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+
+  60% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
